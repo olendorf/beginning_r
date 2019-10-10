@@ -1,0 +1,15 @@
+{%- if include.citation.doi -%}
+  {%- if include.citation.url -%}
+    . 
+    <a href= {{include.citation.url}}>
+      doi: {{ include.citation.doi | strip }}
+    </a>
+  {%- else -%}
+    . doi: {{ include.citation.doi }}
+  {%- endif -%}
+{%- elsif include.citation.url -%}
+  . Retrieved from
+  <a href= {{include.citation.url}}>
+     {{ include.citation.url | strip }}
+  </a>
+{%- endif -%}

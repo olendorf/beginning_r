@@ -1,0 +1,10 @@
+# This allows overriding the defult _config.yml file. Use 
+# jekyll serve --host $IP --port $PORT --baseurl '' --config _config.yml,_config_dev.yml to run this 
+# on a local server. Then GitHub will not use the _config.dev.yml file so the settings
+# there will take over. SEe https://github.com/jekyll/jekyll/issues/958 .
+
+supporting_files_path: "supporting_files/"
+
+# Where the bibliography data is comment out or set to blank to disable.
+title: NCSU Apprentice (DEV)
+

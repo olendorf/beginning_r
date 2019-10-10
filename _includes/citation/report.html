@@ -1,0 +1,16 @@
+{% include citation/author_list.html authors=citation.author %}
+({{ include.citation.issued.year }}).
+<em>
+  {{ include.citation.title }}
+</em>
+{% if include.citation.report_number %}
+. {{ include.citation.report_number }}
+{% endif %}
+{% if include.citation.publisher %}
+.
+  {% if include.citation.publisher-place %}
+    {{ include.citation.publisher-place }}: 
+  {% endif %}
+  {{ include.citation.publisher | strip }}
+{% endif %}
+{% include citation/link.html citation=citation %}.

@@ -1,0 +1,141 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole workshop, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+
+title: NCSU Apprentice             # Name of the workshop
+
+description: |
+  This is just to make changes. jRever back as soon as possible.
+
+
+# Author information 
+author:
+    name: Robert Olendorf 
+    # url:  http://example.com/
+    company:
+        name: NC State University
+        # url:  http://example.com/
+        
+# Any value is ok, Beginner|Intermediate|Advanced are recommended, required 
+level: Beginner
+        
+lang: en    # inserted into metadata fields.
+
+# Settings for the slides.
+# default_theme: bright  # Currently supports bright, ribbon
+# default_width: 792     # Width of the slides
+# default_body_class: list  # used in slide creation
+
+
+theme_skin: ncsu # blue turquoise green berry orange ceramic ncsu
+
+
+                        
+
+# the subpath of your site, e.g. /blog, for GitHub pages the name of the 
+# GitHub repository. Can be blank if you are not using Github pages
+baseurl: "/ncsu_apprentice"
+
+# This allows us to put supporting files in a different repositry if desired.
+# For now just hardcode the base url too, as its complicated with github.
+# This also lets external files be references.
+# supporting_files_url: "https://github.com/olendorf/ncsu_apprentice/"
+supporting_files_path: "blob/gh-pages/supporting_files/"
+
+# Where the bibliography data is comment out or set to blank to disable.
+bibliography: "bibliography.yml"    
+
+# Add files here to prevent jekyll from trying to make pages from them.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - .gitignore
+
+# Build settings
+markdown: kramdown   # Markdown settings
+
+# These are pretty good defaults, change with care.
+kramdown:
+  auto_ids: false
+  enable_coderay: false
+  entity_output: as_char
+  footnote_nr: 1
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  toc_levels: 1..6
+
+
+
+# google_analytics: 'UA-121910301-2'
+
+plugins:
+  - jekyll-archives
+  - jekyll-sitemap
+  
+
+# For breif views of things
+excerpt_separator: "<!-- more -->"
+
+# For the units pages, defaults should be good, 
+# change at your own risk.
+collections:
+  units:
+    output: true
+  slides:
+    output: true
+    
+############    
+## Configure slides here.
+# The Reveal theme
+
+# Look in the reveal/css/theme/ directory for a list of available themes.
+reveal_theme: solarized.css
+
+# The Reveal transition
+reveal_transition: default
+
+# Probably no need ot change
+# Path to the used theme (defaults to the Reveal.js standard theme path)
+reveal_theme_path: /reveal/css/theme/ 
+
+# Additional custom CSS paths
+extra_css: /reveal/css/apprentice.css
+
+# Custom CSS for highlighting (defaults to reveal.js/lib/css/zenburn.css)
+highlight_style_sheet: 
+
+# Embed Server-side speaker notes?
+reveal_notes_server: false
+
+# Additional reveal.js options
+reveal_options: 
+
+# Additional reveal.js dependencies
+reveal_dependencies: 
+
+# Reveal.js subdirectory
+reveal_path: /reveal/
+
+# Turn off if you want a little blue bar on the bottom of your slides 
+# tracking progresss
+progress: true
+# Lines in code blocks.
+line_numbers: true
+
+font-awesome:
+  assets: true
+

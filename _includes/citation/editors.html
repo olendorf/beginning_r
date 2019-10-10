@@ -1,0 +1,6 @@
+{% include citation/author_list.html authors=include.editors %}
+{% if include.editors.size > 1 %}
+  (Eds.) 
+{% else %}
+  (Ed)
+{% endif %}

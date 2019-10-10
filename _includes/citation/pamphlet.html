@@ -1,0 +1,18 @@
+{% include citation/author_list.html authors=citation.author %}
+({{ include.citation.issued.year }}).
+{{ include.citation.title }}
+<em>
+  {% if include.citation.container-title %}
+    . {{ include.citation.container-title }}
+    {% if include.citation.volume %}
+      , {{ include.citation.volume }}
+    {% endif %}
+  {% endif %}
+  {% if include.citation.issue %}
+    ({{ include.citation.issue }})
+  {% endif %}
+</em>
+{% if include.citation.page %}
+  , {{ include.citation.page }}
+{% endif %}
+{% include citation/link.html citation=citation %}.

@@ -1,0 +1,18 @@
+{% include citation/author_list.html authors=citation.author %}
+({{ include.citation.issued.year }}).
+<em>
+  {{ include.citation.title }}. 
+</em>
+{% if include.citation.degree %}
+  ({{ include.citation.degree }})
+{% endif %}
+{% if include.citation.publisher %}
+  {{ include.citation.publisher }}
+{% endif %}
+{% if include.citation.location %}
+  , {{ include.citation.location }}
+{% endif %}
+{% if include.citation.url %}
+  . Retrieved from {{ include.citation.url }}
+{% endif %}
+{% include citation/link.html citation=citation %}.

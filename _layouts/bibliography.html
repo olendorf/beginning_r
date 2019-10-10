@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<div class="post-content bibliography">
+  {% for citation in site.data.bibliography %}
+    <p class="citation">
+      {% case citation.type %}
+        {% when 'book' %}
+          {% include citation/book.html citation=citation %}
+        {% when 'chapter' %}
+          {% include citation/book.html citation=citation %}
+        {% when 'manuscript' %}
+          {% include citation/book.html citation=citation %}
+        {% when 'conference' %}
+          {% include citation/book.html citation=citation %}
+        {% when 'article-journal' %}
+          {% include citation/article.html citation=citation %}
+        {% when 'pamphlet' %}
+          {% include citation/pamphlet.html citation=citation %}
+        {% when 'thesis' %}
+          {% include citation/thesis.html citation=citation %}
+        {% when 'report' %}
+          {% include citation/report.html citation=citation %}
+        {% else %}
+          {% include citation/default.html citation=citation %}
+      {% endcase %}
+    </p>
+    {% if citation.note %}
+        <blockquote>{{ citation.note | markdownify }}</blockquote>
+    {% endif %}
+  {% endfor %}
+</div>

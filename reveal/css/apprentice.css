@@ -1,0 +1,10 @@
+
+.reveal div .two-col {
+  display: inline-block;
+  width: 40%;
+  vertical-align: top;
+}
+
+/*.reveal div .two-col ul {*/
+/*  margin-top: 20px*/
+/*}*/

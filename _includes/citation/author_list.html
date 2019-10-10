@@ -1,0 +1,32 @@
+{% assign author_list = "" %}
+{% for author in include.authors %}
+  {% assign author_list = author_list | append: author.family %}
+  {% assign author_list = author_list | append: ", " %}
+  {% assign givens = author.given | split: " " %}
+  {% assign initials = "" %}
+  {% for given in givens %}
+    {% assign initial = given | slice: 0 %}
+    {% assign initials = initials | append: initial %}
+    {% assign initials = initials | append: "." %}
+  {% endfor %}
+  {% assign author_list = author_list | append: initials %}
+  {% if forloop.index == 6 &&  include.authors.size > 7 %}
+    {% assign author_list = author_list | append: "&hellip;" %} 
+    {% assign last_author = include.authors.last %}
+    {% assign author_list = author_list | append: last_author.family %}
+    {% assign author_list = author_list | append: ", " %}
+    {% assign givens = last_author.given | split: " " %}
+    {% assign initials = "" %}
+    {% for given in givens %}
+      {% assign initial = given | slice: 0 %}
+      {% assign initials = initials | append: initial %}
+      {% assign initials = initials | append: "." %}
+    {% endfor %}
+    {% assign author_list = author_list | append: initials %}
+    {%  break %}
+  {% endif %}
+  {% unless forloop.last %}
+    {% assign author_list = author_list | append: ", " %}
+  {% endunless %}
+{% endfor %}
+{{ author_list }}

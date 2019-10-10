@@ -1,0 +1,13 @@
+- name: home
+  title: Home
+  source: 
+  active: 1
+- name: tutorial
+  title: Tutorial
+  source: units/overview.html
+- name: intstructors_notes
+  title: Instructors' Notes
+  source: instructors_notes.html
+- name: bibliography
+  title: Bibliography
+  source: bibliography.html

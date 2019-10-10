@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<article class="post">
+  <div class="post-content">
+    {{  content }}
+    
+    
+    <hr>
+    
+    {% if page.setup and page.setup.size > 0 %}
+      <h2>Requirements and Set Up</h2>
+    
+      <dl>
+        {% for requirement in page.setup %}
+          <dt>{{ requirement.title | markdownify }}</dt>
+          <dd>{{ requirement.description | markdownify }}</dd>
+          <br/>
+        {% endfor %}
+      </dl>
+      
+    {% endif %}
+    
+    <hr/>
+    
+    {% assign instructors_notes = site.units | where: "instructors_notes", true | sort: "order" %}
+    {% if instructors_notes.size > 0 %}
+      <h2>Timeline</h2>
+      <dl>
+        {% assign cumulative_time = 0 %}
+        {% for segment in instructors_notes %}
+          <dt>{{ segment.title }}
+            <span class="duration">
+              ( {{ cumulative_time }} - {{ cumulative_time | plus: segment.duration }} minutes)
+            </span>
+          </dt>
+          <dd>{{ segment.description | markdownify }}</dd>
+          <dd>{{ segment.instructors_note | markdownify }}</dd>
+          <br/>
+          {% assign cumulative_time = cumulative_time | plus: segment.duration %}
+          <hr/>
+        {% endfor %}
+      </dl>
+    {% endif %}
+  </div>
+  
+</article>

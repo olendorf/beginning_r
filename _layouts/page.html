@@ -1,0 +1,63 @@
+---
+layout: default
+---
+<article class="post">
+
+  <div class="post-content">
+    {{ content }}
+    
+    {% if page.supporting_files %}
+      <h3> Supporting Files</h3>
+      <ul>
+          {% for file in page.supporting_files %}
+            <li>
+              {% if file.link_text %}
+                {% assign link_text = file.link_text %}
+              {% else %}
+                {% assign link_text = file.file_name %}
+              {% endif %}
+              <!-- https://github.com/olendorf/ncsu_apprentice/blob/gh-pages/supporting_files/some_file.txt -->
+              <!--<a href= {{ site.supporting_files_url }}{{ site.supporting_files_path }}{{ file.file_name }}>{{ link_text }}</a>-->
+              <a href=../{{ site.supporting_files_path }}{{ file.file_name }}>{{ link_text }}</a>
+            </li>
+          {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+
+  <hr/>
+
+
+  <div id="navigation" class="tutorial-nav">
+    <ul>
+      {% assign sorted_pages = site.units | where: "tutorial", true | sort:"order" %}
+      {% for sorted_page in sorted_pages %}
+        {% if sorted_page.title == page.title and sorted_page.order == page.order %}
+          {% assign page_index = forloop.index0 %}
+        {% endif %}
+      {% endfor %}
+      {% if page_index > 0 %}
+        <li class="left">
+          {% assign prev_page_index = page_index | minus: 1 %}
+          {% assign prev_page = sorted_pages[prev_page_index] %}
+          <a href={{ prev_page.url | prepend:site.baseurl }}><-- {{ prev_page.title }}</a>
+        </li>
+      {% endif %}
+
+      {% assign last_page_index = sorted_pages.size | minus: 1 %}
+      {% if page_index < last_page_index %}
+        <li class="right">
+          {% assign next_page_index = page_index | plus: 1 %}
+          {% assign next_page = sorted_pages[next_page_index] %}
+            <a href={{ next_page.url | prepend:site.baseurl }}> {{ next_page.title }} --></a>
+        </li>
+      {% endif %}
+    </ul>
+    <br/>
+  </div>
+  <hr/>
+  <div class="right">
+    <p>Page {{ page_index | plus: 1 }} of {{  sorted_pages.size  }}</p>
+  </div>
+
+</article>

@@ -1,0 +1,146 @@
+/* NCSU variables */
+$theme-color: #cc0000;
+$text-color: #3F4650;
+$text-color-secondary: #545E6C;
+$text-grey: #333333;
+$text-light: #ececec;
+$divider: #333333;
+$lighter-grey: #666666;
+$darker-grey: #333333;
+$smoky-white: #ececec;
+$theme-color-dark: #990000;
+
+
+body {
+    font-size: 16px !important;
+}
+
+.home {
+    margin: 25px 25px;
+    
+    hr {
+        margin-left: -25px;
+        margin-right: -25px;
+    }
+}
+
+header.post-header {
+    background: #ececec;
+    
+    #main-logo, #libraries-logo {
+        width: 400px;
+    }
+    
+    .site-header {
+        background: $theme-color;
+        height: 150px;
+    }
+}
+
+.post-content {
+    margin-left: 25px;
+    margin-right: 50px;
+}
+
+.site-title {
+    margin-left: 0px;
+    h1, h2, h3 {
+        margin-top: 0;
+        text-align: center;
+        a {
+            color: #ececec;
+            text-decoration: none;
+        }
+    }
+}
+
+.unit-title {
+    text-align: center;
+    h3 {
+        font-size: 4em;
+        margin: 0 auto 20px;
+    }
+}
+
+.tutorial-nav {
+    margin-right: 25px;
+    li {
+        list-style-type: none;
+        display: inline-block;
+    }
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.center {
+    width: 100%;
+    text-align: center;
+}
+
+.nav-bar {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background: $theme-color;
+      height: 35px;
+    }
+    
+    li {
+        float: left;
+        &.active {
+            background: $theme-color-dark;
+        }
+    }
+    
+    a {
+        display: block;
+        color: $text-light;
+        text-decoration: none;
+        font-size: 1.75em;
+        margin: 0 15px;
+        &:hover {
+            color: $text-grey;
+            text-decoration: none;
+        }
+    }
+}
+
+.site-footer {
+    text-align: center;
+    .author {
+        font-size: 125%;
+        font-weight: bold;
+    }
+    .organization {
+        font-weight: bold;
+    }
+}
+
+.tutorial-nav {
+    .right a {
+        border-radius: 0 10px 10px 0;
+    }
+    
+    .left a {
+        border-radius: 10px 0 0 10px;
+    }
+    a {
+        background: $theme-color;
+        text-decoration: none;
+        color: $text-light;
+        font-weight: bold;
+        padding: 3px 10px;
+        &:hover {
+            color: $text-grey;
+            text-decoration: none;
+        }
+    }
+    
+}

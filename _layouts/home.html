@@ -1,0 +1,83 @@
+---
+layout: default
+
+
+---
+
+
+<div class="home">
+  {{ page.description | default: site.description | markdownify }}
+
+  {% capture site_lang %}{{ site.lang | default: "en" }}{% endcapture %}
+  
+  <hr/>
+  
+  <ul class="info">
+    <li>Level: <strong>{{ site.level | markdownify }}</strong></li>
+    {% if site.units.size > 0 %}
+      {% assign duration = 0 %}
+      {% for unit in site.units %}
+        {% assign duration = duration | plus: unit.duration %}
+      {% endfor %}
+      {% assign hours = duration | divided_by: 60 %}
+      {% assign minutes = duration | modulo: 60 %}
+      <li>Duration: <strong>{{ hours }} hours {{ minutes }} minutes </strong></li>
+    {% else %}
+      <li>Duration: <strong>Unknown</strong></li>
+    {% endif %}
+  </ul>
+  
+  <h3>Prerequisites</h3>
+  <ul>
+  {% if site.data.prereqs and site.data.prereqs.size > 0 %}
+    {% for prereq in site.data.prereqs %}
+      <li>{{ prereq | markdownify }}</li>
+    {% endfor %}
+  {% else %}
+    <li>None</li>
+  {% endif %}
+  </ul>
+  
+  <h3>Learning Objectives</h3>
+
+  <ul>
+    {% if site.data.objectives and site.data.objectives.size > 0 %}
+      {% for objective in site.data.objectives %}
+        <li>{{ objective | markdownify }}</li>
+      {% endfor %}
+    {% else %}
+      <li>None Specified</li>
+    {% endif %}
+  </ul>  
+ 
+  {% if site.data.outcomes and site.data.outcomes.size > 0 %} 
+    <h3>Outcomes</h3>
+    <ul>
+      {% for outcome in site.data.outcomes %}
+        <li>{{ outcome | markdownify }}</li>
+      {% endfor %}
+    
+    </ul>
+  {% endif %}
+  
+  {% if site.units and site.units.size > 0 %}
+
+    <h3>Units</h3>
+    
+    {% assign sorted_pages = site.units  | where: "tutorial", true | sort: "order" %}
+    <ol>
+      {% for node in sorted_pages %}
+        {% if node.order %}
+          <li><a href="{{node.url | prepend:site.baseurl }}">{{node.title}}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ol>
+  
+  {% endif %}
+  
+  <br/>
+  <br/>
+
+  <!--{% include pagination.html %}-->
+
+</div>

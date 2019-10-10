@@ -1,0 +1,33 @@
+<header class="post-header">
+  {% include ncsu_logo.html %}
+  <div class="site-header">
+    <div class="site-title">
+      <h1 class="site-title"> 
+        <a href = "/">{{ site.title | escape }} </a>
+      </h1>
+    </div>
+    <div class="unit-title">
+      <h3 class="post-title">{{ page.title | escape }}</h1>
+    </div>
+  </div>
+  <div class="nav-bar">
+    <ul>
+      {% assign split_path = page.url | split: "/" %}
+      <li {% if page.url == "/" %}class="active"{% endif %}><a href="/">Home</a></li>
+      {% if site.units.size > 0 %}
+        {% assign sorted_units = site.units  | where: "tutorial", true | sort: "order" %}
+        <li {% if split_path[1] == "units" %}class="active"{% endif %}><a href="{{ sorted_units[0].url | prepend: site.baseurl }}">Tutorial</a></li>
+      {% endif %}
+      {% assign instructors_notes = site.units | where: "instructors_notes", true %}
+      {% if instructors_notes.size > 0 %}
+        <li {% if page.url == "/instructors_notes.html" %}class="active"{% endif %}><a href="{{ site.baseurl }}/instructors_notes.html"> Instructor's Notes</a></li>
+      {% endif %}
+      {% if site.slides.size > 0 %}
+        <li {% if page.url == "/slides.html" %}class="active"{% endif %}><a target="_blank" href="{{ site.baseurl }}/slides.html">Slides</a></li>
+      {% endif %}
+      {% if site.data.bibliography.size > 0 %}
+        <li {% if page.url == "/bibliography.html" %}class="active"{% endif %}><a href="{{ site.baseurl }}/bibliography.html"> Bibliography</a></li>
+      {% endif %}
+    </ul>
+  </div>
+</header>
