@@ -171,17 +171,16 @@ You will often need to add items to a vector.
 ```
 And you can get parts of a vector.
 
-```r> x[1]
+```r
+> x[1]   # One item
 [1] "1"
-> x[1:3]
+> x[1:3]  # Slice 
 [1] "1" "2" "5"
-> x[1,3,5]
-Error in x[1, 3, 5] : incorrect number of dimensions
-> x[[1,3,5]]
-Error in x[[1, 3, 5]] : incorrect number of subscripts
-> x[c(1,3,5)]
+> x[c(1,3,5)]  # Specific items
 [1] "1" "5" NA 
 ```
+
+NOTE: In R the indexes start at 1, not 0 as in many other languages.
 
 
 ### Lists
