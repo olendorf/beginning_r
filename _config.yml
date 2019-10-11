@@ -15,10 +15,11 @@
 # in the templates via {{ site.myvariable }}.
 
 
-title: NCSU Apprentice             # Name of the workshop
+title: Beginning R            # Name of the workshop
 
 description: |
-  This is just to make changes. jRever back as soon as possible.
+  An introduction to R and R Studio geared towards undergrads, beginning grad students
+  and other that are new to R.
 
 
 # Author information 
@@ -47,7 +48,7 @@ theme_skin: ncsu # blue turquoise green berry orange ceramic ncsu
 
 # the subpath of your site, e.g. /blog, for GitHub pages the name of the 
 # GitHub repository. Can be blank if you are not using Github pages
-baseurl: "/ncsu_apprentice"
+baseurl: "/beginning_r"
 
 # This allows us to put supporting files in a different repositry if desired.
 # For now just hardcode the base url too, as its complicated with github.
@@ -103,7 +104,7 @@ collections:
 # The Reveal theme
 
 # Look in the reveal/css/theme/ directory for a list of available themes.
-reveal_theme: solarized.css
+reveal_theme: red_head.css
 
 # The Reveal transition
 reveal_transition: default

@@ -1,0 +1,139 @@
+
+.example {
+  background-color: #121621;
+  top: 1.2em;
+  right: -3.2em;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-box-shadow: 0 0 0 1px #1d212e inset,0 0 2px 1px #fff inset,0 0 1em #888;
+  -moz-box-shadow: 0 0 0 1px #1d212e inset,0 0 2px 1px #fff inset,0 0 1em #888;
+  box-shadow: 0 0 0 1px #1d212e inset,0 0 2px 1px #fff inset,0 0 1em #888;
+  color: #FF0;
+  display: block;
+  padding: .6em 3.5em;
+  position: absolute;
+  font: bold .82em sans-serif;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 1px -1px 8px rgba(0,0,0,0.60);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.definition {
+  background-color: #a00;
+  top: 1.2em;
+  right: -3.2em;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-box-shadow: 0 0 0 1px #1d212e inset,0 0 2px 1px #fff inset,0 0 1em #888;
+  -moz-box-shadow: 0 0 0 1px #1d212e inset,0 0 2px 1px #fff inset,0 0 1em #888;
+  box-shadow: 0 0 0 1px #1d212e inset,0 0 2px 1px #fff inset,0 0 1em #888;
+  color: #FFF;
+  display: block;
+  padding: .6em 3.5em;
+  position: absolute;
+  font: bold .82em sans-serif;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 1px -1px 8px rgba(0,0,0,0.60);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+blockquote {
+  font-size: 14px;
+  color: #333333;
+}
+
+blockquote .author {
+  font-style: italic;
+  color: #555555;
+  display: block;
+  margin: 10px auto 0 100px;
+}
+
+h1.jumbo {
+  font-size: 64px;
+  text-align: center;
+}
+
+h3.jumbo {
+  font-size: 48px;
+  text-align: center;
+}
+
+.big-picture .image {
+  position: relative;
+  margin: -400px auto auto -100px;
+}
+
+.big-picture .text h2 {
+  position: absolute;
+  color: #eeac44;
+  width: 600px;
+  height: 50px;
+  left: 100px;
+  top: 800px;
+}
+
+.warning {
+  color: #880000;
+}
+
+.info {
+  color: #3366cc;
+}
+
+.success {
+  color: #55cc33;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+.title-slide {
+/*  background-image: url("../../assets/img/john_galt.png"); */
+  background-color: #fffff0;
+}
+
+.title-slide hgroup > h1 {
+  color: #880000;
+}
+
+.title-slide hgroup > h2 {
+  color: #2d2d2d;
+}
+
+.current > hgroup > h2, .segue > hgroup > h2, .past > hgroup > h2 {
+  color: #880000;
+}
+
+strong, b {
+  font-weight: bold;
+}
+
+.twocol img{
+  max-width: 450px;
+}
+
+em {
+  font-style: italic;
+}
+
+
+slides slide, .title-slide{
+  background-color: #ffffff;
+  color: #555555;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
