@@ -18,9 +18,10 @@ description: |
   tool and R Studio doesn't change that. It does make it much easier to see what is 
   going on though. This unit will give you a quick introduction to the main 
   features of R Studio so we can get moving on learning R next.
+  
+  - Learn the main view panels in R Studio
 
 instructors_note: |
-  THis part is not so much hands on, but you may want to give people time to click around.
   
 
   
@@ -62,6 +63,7 @@ interact with R and is exactly the same as typing R commands into a terminal. We
 be working with this a lot, but to try it out try typing the following into the prompt.
 
 ```r 
+
 > 1   # Type this in
 [1] 1  # The response.
 
@@ -70,6 +72,7 @@ be working with this a lot, but to try it out try typing the following into the 
 
 > 1 == 1
 [1] TRUE
+
 ```
 
 ### Script and Data Viewer
@@ -88,6 +91,7 @@ script then click the **Source** button.
 print(1)
 print(1 + 1)
 print(1 == 1)
+
 ```
 
 You can also run a script line by line. Click on any line to put the cursor then and 
@@ -104,7 +108,9 @@ data and many other things are stored in memory. Also the history of your intera
 the console are shown here. To try it out type the following into the console.
 
 ```r
+
 > var <- "This is my variable"
+
 ```
 
 Click on the **Environment** tab if it isn't already active. You should see that

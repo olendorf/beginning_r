@@ -1,7 +1,9 @@
 {% assign author_list = "" %}
 {% for author in include.authors %}
   {% assign author_list = author_list | append: author.family %}
-  {% assign author_list = author_list | append: ", " %}
+  {% if author.given %}
+    {% assign author_list = author_list | append: ", " %}
+  {% endif %}
   {% assign givens = author.given | split: " " %}
   {% assign initials = "" %}
   {% for given in givens %}

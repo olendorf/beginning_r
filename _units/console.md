@@ -1,6 +1,6 @@
 ---
 layout: page   # This is required
-title: Interacting with the Console and R Studio   # This is required
+title: The Console and R Studio   # This is required
 
 order: 20    # Determines the order of units. Doesn't need to be consecutive though
             # or even start with zero, the pages will be displayed in their sort
@@ -14,12 +14,15 @@ instructors_notes: true  # Set to true if you want this displayed in instructors
 # Provide a brief description of what the unit is about. You can use markdown
 # notation for this.
 description: |
+  Working with a command line based program can be challenging for some. This unit
+  will get you more comfortable using the R console and introduce some ideas for 
+  building productive workflows and reproducible scripts.
+  
   - Learn how to enter commands into the console.
   - Build scripts using the **History**
   - Explore variables using **Environment**
 
 instructors_note: |
-  THis part is not so much hands on. Work students through process a few times.
   
 
   
@@ -51,33 +54,40 @@ simple. You type something into it the console after the ">" and R does somethin
 simplest, and least useful thing to do, is to just type in a value.
 
 ```r
+
 > 4
 [1] 4
+
 ```
 
 You can also do math this way.
 
 ```r
+
 > (4 + 4)/3
 [1] 2.666667
+
 ```
 
 This is all fine for very simple things, but to really make it useful we 
 should assign the value to a variable.
 
-```r 
+```r
+ 
 > x = (4 + 4)/3   # Notice there is no response.
-> 
+
 ```
 
 If you look on the upper right panel in the **Environment** tab, you will see the value 
 has been stored under the variable **x**. We can now use this for future analyses.
 
 ```r
+
 > x = (4 + 4)/3
 > y = 27
 > y^x   # The carat "^" means to the power of. 2^2 = 4
 [1] 6561
+
 ```
 
 ## Building a Script 
@@ -91,9 +101,11 @@ you want then click **To Source** and the command will be moved to your script. 
 and make your script look like this.
 
 ```r
+
 y = 27
 x = (4 + 4)/3
 print(y^x)   # The print function sends the result to your console.
+
 ```
 
 Now on the **Environment** tab click the broom. This clears the your environment. Now 
