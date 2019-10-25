@@ -1,7 +1,38 @@
 # Anythign else, misc
 
 
-
+- title : Colors in R
+  type: misc
+  author: 
+    - family: Zheng
+    - given: Tian
+  url: http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf
+  note: |
+   A handy list of named colors in R
+   
+- title: ggplot2
+  type: misc
+  author: 
+    - family: Wickham
+      given: Hadley
+    - family: Change
+      given: Winston
+    - family: Henry
+      given: Lionel
+    - family: Pederson
+      given: Thomas Lin
+    - family: Takahashi
+      given: Kohske
+    - family: Wilke
+      given: Claus
+    - family: Woo
+      given: Kara
+    - family: Yutani
+      given: Hiroaki
+  publisher: R Studio
+  url: https://ggplot2.tidyverse.org
+  note: |
+    The ggplot2 home page.
 
 - title : Programming with R
   type: misc

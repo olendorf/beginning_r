@@ -6,7 +6,7 @@ order: 0    # Determines the order of units. Doesn't need to be consecutive thou
             # or even start with zero, the pages will be displayed in their sort
             # order.
 
-duration: 10 # A hint to how long it will take to cover this topic in mintues.
+duration: 5 # A hint to how long it will take to cover this topic in mintues.
 
 tutorial: false  # Set to true if you want this page displayed as a web page
 instructors_notes: true  # Set to true if you want this displayed in instructors notes

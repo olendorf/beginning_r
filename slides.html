@@ -5,7 +5,7 @@ title: not used. Use _config.yml!
 
 {% assign deck = site.slides | sort: "order" %}
 {% for slide in deck %}
-  <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
+  <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:" data-background="#ffffff">
     <script type="text/template">
       {{ slide.content }}
     </script>

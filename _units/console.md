@@ -2,7 +2,7 @@
 layout: page   # This is required
 title: The Console and R Studio   # This is required
 
-order: 20    # Determines the order of units. Doesn't need to be consecutive though
+order: 15    # Determines the order of units. Doesn't need to be consecutive though
             # or even start with zero, the pages will be displayed in their sort
             # order.
 
@@ -73,10 +73,20 @@ This is all fine for very simple things, but to really make it useful we
 should assign the value to a variable.
 
 ```r
- 
-> x = (4 + 4)/3   # Notice there is no response.
+
+> y <- (4 + 4)/3  # This is the R way of assigning to a variable, 
+                  # notice there is no response
+
+> x = (4 + 4)/3   # You can use an equals sign too. 
 
 ```
+
+> The somewhat idiosyncratic notation of `<-` for assignment is largely due to R's 
+> evolution from S. Back then, there was no `==` for testing for equivalence in S. Also,
+> many keyboards at the time had an actual `<-` key. As other programming languages developed,
+> R has evolved to be more similar to them in some ways, but still retains the `<-` 
+> assignment operator. R style guides recommond using `<-` for readability so we'll use that
+> here.
 
 If you look on the upper right panel in the **Environment** tab, you will see the value 
 has been stored under the variable **x**. We can now use this for future analyses.
@@ -84,15 +94,31 @@ has been stored under the variable **x**. We can now use this for future analyse
 ```r
 
 > x = (4 + 4)/3
-> y = 27
-> y^x   # The carat "^" means to the power of. 2^2 = 4
+> a = 27
+> a^x   # The carat "^" means to the power of. 2^2 = 4
 [1] 6561
+
+```
+
+Sometimes you may want to remove something from your environment. You can use the `rm()`
+function for this.
+
+```r
+
+> z <- "oops"
+> z
+[1] "oops"
+> rm(z)
+> z
+Error: object 'z' not found
 
 ```
 
 ## Building a Script 
 
-Open up a new script by clicking the green "+" icon at the top right of your window. 
+Open up a new script by clicking the new script button 
+<img src="/assets/img/units/new_script.png" alt="The new file button" width="35"/>
+at the top right of your window. 
 When building up a complex analysis, it often takes trial and error to get what you want.
 A typical workflow is to use the console to perfect your workflow then copy the 
 commands over to your script. One way to do this is to use the **History** 
@@ -119,5 +145,6 @@ through your script to debug them.
 
 This method of building up scripts via the command line is very common. The technique of
 clearing your environment is also very important. It is actually pretty easy to create 
-a script that *works* because you have a variable in your environment that the script 
-needs. By clearing the environment you can detect these problems and correct them.
+a script that *"works"* because you have a variable in your environment that the script 
+needs, then fails when that variable is no longer accidentally available. By clearing 
+the environment you can detect these problems and correct them.

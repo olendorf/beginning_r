@@ -2,11 +2,11 @@
 layout: page   # This is required
 title: Data Types and Structures   # This is required
 
-order: 30    # Determines the order of units. Doesn't need to be consecutive though
+order: 25    # Determines the order of units. Doesn't need to be consecutive though
             # or even start with zero, the pages will be displayed in their sort
             # order.
 
-duration: 15 # A hint to how long it will take to cover this topic in mintues.
+duration: 20 # A hint to how long it will take to cover this topic in mintues.
 
 tutorial: true  # Set to true if you want this page displayed as a web page
 instructors_notes: true  # Set to true if you want this displayed in instructors notes
@@ -22,6 +22,8 @@ description: |
   - Learn how to explore a variable using environment
 
 instructors_note: |
+  In live sessions, it may be best to skip the details of scalars (num, long, integer logical and 
+  complex) if time is an issue. 
   
 
   
@@ -50,8 +52,11 @@ R supports 6 basic data types.
 - character
 - numeric
 - integer
-- logical
+- logical (boolean)
 - complex
+- 
+It isn't typically necessary to force a numeric value to be integer. R does a pretty 
+good job at handling this for you. 
 
 
 R has a few functions to examine the objects (R calls everything an object).
@@ -67,7 +72,7 @@ R has a few functions to examine the objects (R calls everything an object).
 > char <- "some random characters"
 > num <- 1.2
 > int <- 2L
-> log <- TRUE
+> bool <- TRUE
 > comp <- 1 + 3i
 
 # Try out some of the 
@@ -155,7 +160,8 @@ You can use the functions shown above to explore vectors.
 
 ```r
 
-1] "numeric"
+> class(x)
+[1] "numeric"
 > typeof(x)
 [1] "double"
 > length(x)
@@ -174,7 +180,7 @@ You will often need to add items to a vector.
 > x <- c(x, 20)  # This puts the new vector into x 
 > x
 [1]  1  2  5 20
-> x <- c(x, c(NA, 31))  # Combining two fectors and using missing value.
+> x <- c(x, c(NA, 31))  # Combining two vectors and using missing value.
 > x
 [1]  1  2  5 20 NA 31
 > x <- c(x, "42")   # If you mix types, R can do some odd things.
@@ -336,7 +342,7 @@ You can access cells, rows are columns in a matrix using subscripts.
 
 ### Data Frames
 
-Perhaps the most frequently used data structure in R is the Data Frame. It is essentially 
+The most frequently used data structure in R is the Data Frame. It is essentially 
 a list of vectors, so that each column must be composed of the same data type, but each
 row can be composed of a mix of data types. The primary constraint on data frames is that
 each column be the same length. It may look like a matrix but
@@ -351,8 +357,8 @@ below is very common.
 > names <- c("Jill", "Joe", "Fido")
 > age <- c(4, 7, 8)
 > adopted <- c(TRUE, FALSE, TRUE)
-> df <- data.frame(names, age, adopted)
-> df
+> dogs_df <- data.frame(names, age, adopted)
+> dogs_df
 
   names age adopted
 1  Jill   4    TRUE
@@ -365,14 +371,14 @@ You can access parts of a data frame much like matrix using subscripts.
 
 ```r
 
-> df[1,2]
+> dogs_df[1,2]
 [1] 4
 
-> df[1,]
+> dogs_df[1,]
   names age adopted
 1  Jill   4    TRUE
 
-> df[,2:3]
+> dogs_df[,2:3]
   age adopted
 1   4    TRUE
 2   7   FALSE
@@ -384,7 +390,7 @@ You can also access columns using the `$` notation.
 
 ```r
 
-> df$age
+> dogs_df$age
 [1] 4 7 8
 
 ```
@@ -393,12 +399,48 @@ You can also select rows based on a certain criterion.
 
 ```r
  
-> df[which(df$age > 5),]
+> dogs_df[which(df$age > 5),]
   names age adopted
 2   Joe   7   FALSE
 3  Fido   8    TRUE
 
 ```
+
+You will often need to recode a variable or add a new column (variable) to your data 
+frame. This can usually done very easily as follows.
+
+
+```r
+
+# This creates a new column named dog_age
+> dogs_df$dog_age <- dogs_df$age * 7
+> dogs_df
+  names age adopted dog_age
+1  Jill   4    TRUE      28
+2   Joe   7   FALSE      49
+3  Fido   8   FALSE      56
+
+# This recodes age to months, overwriting
+# the original age in years.
+> dogs_df$age <- dogs_df$age * 12
+> dogs_df
+  names age adopted dog_age
+1  Jill  48    TRUE      28
+2   Joe  84   FALSE      49
+3  Fido  96   FALSE      56
+
+```
+
+In most cases it is preferable to create a new column rather than overwrite one that 
+exists.
+
+## Try it out
+
+1. Create a vector of logical values (TRUE, FALSE, TRUE, FALSE)
+
+
+2. Create a column that displays the length of the dog's name.
+
 
 
 

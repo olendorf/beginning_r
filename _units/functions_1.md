@@ -1,6 +1,6 @@
 ---
 layout: page   # This is required
-title: Using Functions  # This is required
+title: Functions  # This is required
 
 order: 40    # Determines the order of units. Doesn't need to be consecutive though
             # or even start with zero, the pages will be displayed in their sort
@@ -78,7 +78,7 @@ We can change `runif()` to return numbers between 0 and 10.
 
 
 We can use the result of one function as the input for another function. Here 
-we calculate the mean of the results from `runif()`.
+we calculate the mean of the results from `runif()` using the function `mean()`.
 
 ```r
 
@@ -146,8 +146,9 @@ converter <- function(num, conversion  = 1.60934) {
 ## Try It Out
 
 1. Investigate the `floor()` function. See what it does and how to use it.
-2. Model a six sided die using `runif()`. (HINT: Die tosses are integers! )
+2. Write a function that models a six sided die using `runif()`. (HINT: Die tosses are integers! HINT: R typically applies a function to each element of a vector.)
 3. Write a function to return the average roll from N number of tosses.
+4. Check your function by using the `mean()` function. What is the expected average roll of a six sided die.
 4. Advanced: Edit your function to model S sided dice. Make six sides the default.
       
 

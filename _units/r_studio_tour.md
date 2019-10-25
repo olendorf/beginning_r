@@ -6,7 +6,7 @@ order: 10    # Determines the order of units. Doesn't need to be consecutive tho
             # or even start with zero, the pages will be displayed in their sort
             # order.
 
-duration: 10 # A hint to how long it will take to cover this topic in mintues.
+duration: 5 # A hint to how long it will take to cover this topic in mintues.
 
 tutorial: true  # Set to true if you want this page displayed as a web page
 instructors_notes: true  # Set to true if you want this displayed in instructors notes
@@ -75,13 +75,16 @@ be working with this a lot, but to try it out try typing the following into the 
 
 ```
 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
 ### Script and Data Viewer
 
-You may not have an Area A yet. To see it click the small green plus icon at the top left
+You may not have an Area A yet. To see it click the small green plus icon  <img src="/assets/img/units/new_script.png" alt="The new file button" width="35"/> at the top left
 of the window and choose **R Script**. You'll see a blank script document.  Whereas
 you run commands in the console one by one, you can collect these commands
 into a script and rerun them all any time you like. Type the following into your 
-script then click the **Source** button.
+script then click the **Source** button 
+<img src="/assets/img/units/source_button.png" alt="The source button" width="75"/>.
 
 > NOTE: You need to use the `print()` function to tell R to write the result to the 
 > console.
@@ -95,7 +98,8 @@ print(1 == 1)
 ```
 
 You can also run a script line by line. Click on any line to put the cursor then and 
-click the **Run** button. You will see only that result ouput.
+click the **Run** button 
+<img src="/assets/img/units/run_button.png" alt="The run button" width="52"/>. You will see only that result ouput.
 
 
 ### Environment and Memory
@@ -103,9 +107,11 @@ click the **Run** button. You will see only that result ouput.
 Area B displays primarily things that are stored in the computer's memory. Memory is
 the ephemeral information that a computer keeps while it is running. In contrast to
 a computer disk, flash drive or similar devices, information stored in the memory 
-is lost when you close a program or turn the computer off. Values assigned to variables,
-data and many other things are stored in memory. Also the history of your interactions with
-the console are shown here. To try it out type the following into the console.
+is lost when you close a program or turn the computer off. R actually saves these values 
+to disk when you close R, so long as you save your environment when closing though. 
+Values assigned to variables, data and many other things are stored in memory. 
+Also the history of your interactions with the console are shown here. To try it out 
+type the following into the console.
 
 ```r
 

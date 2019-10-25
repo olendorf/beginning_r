@@ -19,7 +19,6 @@ description: |
   - Become familiar with significance values
 
 instructors_note: |
-  THis part is not so much hands on, but you may want to give people time to click around.
   
 
   
@@ -37,7 +36,7 @@ instructors_note: |
 ---
 
 Before we do an analysis, we need data! Fortunately R provides a large number of 
-sample data sets. Also most packages either use of the these or supply their own to 
+sample data sets. Also most packages either use one of the these or supply their own to 
 help users learn the package. You can list all the data sets you have available using
 the `data()` function. You will see all the data sets listed on the top left pane. We
 will start with one called **mtcars**.
@@ -50,15 +49,6 @@ some helpful functions to use as well.
 
 View(mtcars)  # Displays the data frame in the top left pane
 
-> typeof(mtcars)
-[1] "list"
-
-> class(mtcars)
-[1] "data.frame"
-
-> names(mtcars)
- [1] "mpg"  "cyl"  "disp" "hp"   "drat" "wt"   "qsec" "vs"   "am"   "gear" "carb"
- 
 > head(mtcars)
                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
 Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
@@ -76,6 +66,15 @@ Ford Pantera L 15.8   8 351.0 264 4.22 3.170 14.5  0  1    5    4
 Ferrari Dino   19.7   6 145.0 175 3.62 2.770 15.5  0  1    5    6
 Maserati Bora  15.0   8 301.0 335 3.54 3.570 14.6  0  1    5    8
 Volvo 142E     21.4   4 121.0 109 4.11 2.780 18.6  1  1    4    2
+
+> typeof(mtcars)
+[1] "list"
+
+> class(mtcars)
+[1] "data.frame"
+
+> names(mtcars)
+ [1] "mpg"  "cyl"  "disp" "hp"   "drat" "wt"   "qsec" "vs"   "am"   "gear" "carb"
 
 # Displays the structure of the object
 > str(mtcars)
@@ -112,7 +111,7 @@ Packages are bundles of functions that can be imported and used. We'll cover the
 more in another unit, but they are one of the best things about R!
 
 ```r 
-
+> install.packages("psych")  # You probably don't need to install it
 > library(psych)
 > describe(mtcars$mpg)
    vars  n  mean   sd median trimmed  mad  min  max range skew kurtosis   se
@@ -144,7 +143,8 @@ or the same.
 
 ```r
 
-> t.test(mtcars$mpg~mtcars$am)
+> trans_test <- t.test(mtcars$mpg~mtcars$am)
+> trans_test
 
 	Welch Two Sample t-test
 
@@ -166,8 +166,8 @@ a way of measuring the size of the difference betweeen the two groups that is
 independent of the scale. **df** stands for *degrees of freedom*, its a way of describing
 the sample size. 
 
-**t** and **df** are used to compute the **p-value** which is actually
-the most important value. The **p-value** is an estimate of the likelihood that you would
+**t** and **df** are used to compute the **p-value** which is actually the most 
+meaningful value. The **p-value** is an estimate of the likelihood that you would
 get a difference between the groups as larger or larger by chance. That may seem 
 confusing, but if we think about our coins again, we know we are unlikely to get 50 heads
 and 50 tails if we toss it 100 times. The further we are away from that, however, the 
@@ -178,13 +178,20 @@ effect because cars vary in so many different ways. However, at some point we mi
 difference in mileage would be large enough for us to believe transmission does have
 an effect on gas mileage. In this case the **p-value** is 0.001374 which means we 
 would expect a difference this large by chance only 0.1374% of the time. That seems 
-pretty unlikely, and by convention any **p-value** of 0.05 or less we consider to be
-signficant. So yes, statistically cars with standard transmissions get better gas 
-mileage than cars with automatic transmissions.
+pretty unlikely, and by convention any **p-value** of 0.05 (1 in 20 times) or less we 
+consider to be signficant. So yes, statistically cars with standard transmissions get 
+better gas mileage than cars with automatic transmissions.
 
 It is tempting to just say we have found the answer and leave it at that. Always
-buy a standard transmission if you want to save money on gas. There is no 
-substitute for good thinking though. There may be other reasons why we saw this difference.
+buy a standard transmission if you want to save money on gas. However, there is no 
+substitute for good thinking. 
+
+First consider is this a meaningful difference? This is different from statistical significance. 
+What you should ask in this case is "Is the difference between transmission types a 
+meaningful difference in mileage". A difference of 0.1 mpg might not be, but we 
+see a difference of about 7mpg, which is meaningful to most people.
+
+There may also be other reasons why we saw this difference.
 Is it possible automatic transmissions are found more often in larger cars, while 
 standard transmissions are found in smaller sports cars? 
 
