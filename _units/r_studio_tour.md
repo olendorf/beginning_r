@@ -79,7 +79,8 @@ be working with this a lot, but to try it out try typing the following into the 
 
 ### Script and Data Viewer
 
-You may not have an Area A yet. To see it click the small green plus icon  <img src="/assets/img/units/new_script.png" alt="The new file button" width="35"/> at the top left
+You may not have an Area A yet. To see it click the small green plus icon  
+<img src="/assets/img/units/new_script.png" alt="The new file button" width="35"/> at the top left
 of the window and choose **R Script**. You'll see a blank script document.  Whereas
 you run commands in the console one by one, you can collect these commands
 into a script and rerun them all any time you like. Type the following into your 
