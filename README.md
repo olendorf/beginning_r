@@ -1,60 +1,13 @@
-# Apprentice
+# R For Beginners
 
-A lightweight framework for creating workshops using jekyll and markdown (mostly).
-Apprentice is intended to facilitate the creation and executation of workshops assuming
-that a good workshop...
+This is tutorial for those who are just starting with R. It is designed to be used both as a resource for workshops and also as a self guided tutorial to R.
 
-- Has a strong hands on component
-- Has online material to refer to both before and after the workshop
-- Integrated slide presentation
-- Is well organized
-
-The Apprentice framework is composed of 4 primary components.
-
-1. A home page with prequisites and objectives and a table of contents
-2. An online tutorial 
-3. A slide deck for presentations
-4. Instructors notes
+You can access the tutorial page [here](https://olendorf.github.io/beginning_r/). The home pages provides a brief description of the content, including a list 
+of tutorial Units. Instructors notes are there to provide those giving live workshops extra guidance. There are also slides for use in a workshop. Finally, other
+resources gives some websites mentioned in the tutorial or othrwise helpful to learning and using R.
 
 
-## Useage
 
-
-### Quick Start
-
-If you are familiar with Jekyll, you can probably get going using the steps below. There is also a more comprehensive [tutorial and demo](https://olendorf.github.io/apprentice/) if you like.
-
-1. Fork the repository or Create from Template.
-2. Edit `_config.yml` as described in the comments
-3. Edit `_data/objectives.yml` and `_data/prereqs.yml` to outline course
-   objectives and prequisites.
-4. Create, remove and edit files in `_units/` to create course units. `_units/overview.md`
-   is documented with guidance.
-5. Create, remove and edit files in `_slides/` to create presentation slides as needed.
-6. Got to your GitHub pages site, all should be working.
-
-### Running Apprentice Locally
-
-Rather than doing your changes on GitHub, waiting for the changes to take effect, etc., It is much more efficient to 
-work locally and use a local server to run your copy of apprenctice locally as well. The easiest way to do that is to 
-use the `_config_dev.yml` to make any configuraiton changes you wish. Minimally the path to the supporting files will typically 
-need to be changed. You may also have to install ruby if you are on a windows machine. To run apprentice (or any Jekyll based web site)
-use the following commands in your terminal from your project's root directory.
-
-    > bundle install    # installs the ruby gems you need to run the site
-    
-    # Depending on your machine you need to do one of the following
-    
-    > bundle exec jekyll serve
-    
-    # OR
-    
-    # This loads the both config files. If your environmental variables for $IP address and $PORT are not set
-    # You can use `0.0.0.0` and `4000` respectively
-    > jekyll serve --host $IP --port $PORT --baseurl '' --config _config.yml,_config_dev.yml
-    
-> PRO TIP: On Mac and Linus you can put this as an alias in your .bash_profile or .bashrc file.
-> alias jstart="jekyll serve --host $IP --port $PORT --baseurl '' --config _config.yml,_config_dev.yml"
 
 
 ## Licensing
@@ -74,7 +27,14 @@ Software License.
 
 ## Contributing
 
-Contributions are welcome. You can contribute to this workshop by 
+This workshop is definitely a work in progress and contributions are welcome. Adding content,
+correcting content or anything you think would an improvement is welcome.
+
+You are also welcome to Fork this repository and modify it to suit your own needs as 
+defined in the license described above.
+
+
+You can contribute to this workshop by 
 
 1. Submitting issues
 2. Forking the repository, editing it and submitting your proposed changes as a pull request.
