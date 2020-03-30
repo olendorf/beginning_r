@@ -73,7 +73,7 @@ boxplot(mpg~am, data = mtcars)
 
 
 <figure class="centered">
-  <img src="/assets/img/units/boxplot_1.png" alt="The most basic version of a box bplot" style="width:60%">
+  {% include image_tag.html url="/assets/img/units/boxplot_1.png" alt="The most basic version of a box bplot" width="60%" %}
   <figcaption>Figure 1 - A basic box plot.</figcaption>
 </figure>
 
@@ -95,8 +95,7 @@ denote transmission type isn't very clear to let's fix that too.
 ```
 
 <figure class="centered">
-  <img src="/assets/img/units/boxplot_2.png" alt="An improved boxplot" style="width:60%">
-  <figcaption>Figure 2 - An improved box plot.</figcaption>
+  {% include image_tag.html url="/assets/img/units/boxplot_2.png" alt="An improved boxplot." width="60%" %}
 </figure>
 
 ## Try It Out
@@ -133,7 +132,9 @@ boxplot(mpg~transmission*engine_type, data = mtcars, col = two_colors, boxwex = 
 
 
 <figure class="centered">
-  <img src="/assets/img/units/boxplot_2colors.png" alt="A box plot with red denoting automatic transmission and blue manual." style="width:60%">
+  {% include image_tag.html url="/assets/img/units/boxplot_2colors.png" 
+                            alt="A box plot with red denoting automatic transmission and blue manual."
+                            width="60%" %}
   <figcaption>Figure 3 - A boxplot demonstrating using color to denote transmission type.</figcaption>
 </figure>
 

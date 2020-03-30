@@ -84,7 +84,7 @@ Then we'll make our `ggplot()` object. Lets look at horsepower and mpg first.
 ```
 
 <figure>
-  <img src="/assets/img/units/ggplot1.png" alt="A simple scatter point plot" style="width:60%">
+  {% include image_tag.html url="/assets/img/units/ggplot1.png" alt="A simple scatter point plot" width="60%" %}
   <figcaption>Figure 1 - A simple scatter point plot using **ggplot2**.</figcaption>
 </figure>
 
@@ -102,7 +102,7 @@ and the color depend on the weight.
 ```
 
 <figure>
-  <img src="/assets/img/units/ggplot2.png" alt="Scatter point plot with more data displayed" style="width:60%">
+  {% include image_tag.html url="/assets/img/units/ggplot2.png" alt="Scatter point plot with more data displayed" width="60%" %}
   <figcaption>Figure 2 - A scatter plot using color, size and shape to  visualize more information.</figcaption>
 </figure>
 
@@ -123,11 +123,11 @@ chart doesn't really seem to add much, but its a good example of adding geoms to
 ```
 <div class="row">
 <figure class="two column">
-  <img src="/assets/img/units/ggplot_density.png" alt="Density contour plot">
+  {% include image_tag.html url="/assets/img/units/ggplot_density.png" alt="Density contour plot" %}
   <figcaption>Figure 3 - Adding density contours to the plot.</figcaption>
 </figure>
 <figure class="two column">
-  <img src="/assets/img/units/ggplot_ellipse.png" alt="Scatter point plot with more data displayed">
+  {% include image_tag.html url="/assets/img/units/ggplot_ellipse.png" alt="Scatter point plot with more data displayed" %}
   <figcaption>Figure 4 - Adding confidnece ellipses to teh plot.</figcaption>
 </figure>
 </div>
@@ -142,7 +142,7 @@ Fitting lines to the plot is often helpful.
 ```
 
 <figure>
-  <img src="/assets/img/units/ggplot_smooth.png" alt="Scatter point plot with trend lines" style="width:60%">
+  {% include image_tag.html url="/assets/img/units/ggplot_smooth.png" alt="Scatter point plot with trend lines" width="60%" %}
   <figcaption>Figure 5 - The plot with trendlines added for transmission type.</figcaption>
 </figure>
 
@@ -164,7 +164,7 @@ do labels and titles.
 ```
 
 <figure>
-  <img src="/assets/img/units/ggplot_legends.png" alt="Legends have been fixed" style="width:60%">
+  {% include image_tag.html url="/assets/img/units/ggplot_legends.png" alt="Legends have been fixed" width="60%" %}
   <figcaption>Figure 6 - The plot with legends improved.</figcaption>
 </figure>
 
@@ -201,7 +201,7 @@ ggsave("my_final_plot.png")
 ```
 
 <figure>
-  <img src="/assets/img/units/my_final_plot.png" alt="The final plot" style="width:60%">
+  {% include image_tag.html url="/assets/img/units/my_final_plot.png" alt="The final plot" width="60%" %}
   <figcaption>Figure 7 - The final plot with the tufte theme.</figcaption>
 </figure>
 

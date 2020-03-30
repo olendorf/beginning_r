@@ -52,7 +52,7 @@ Each of these areas have a broad function, most of them with several tabs. We'll
 through each one quickly to get us started.
 
 <figure class="centered">
-  <img src="{{site.baseurl}}/assets/img/units/r_studio_environment.png" alt="The four main areas of the R Studio environment." style="width:75%">
+  {% include image_tag.html url="/assets/img/units/r_studio_environment.png" alt="The four main areas of the R Studio environment." width="75%" %}
   <figcaption>Figure 1 - The four main areas of the R Studio environment.</figcaption>
 </figure>
 
@@ -78,13 +78,15 @@ be working with this a lot, but to try it out try typing the following into the 
 
 ### Script and Data Viewer
 
-You may not have an Area A yet. To see it click the small green plus icon  
-<img src="/assets/img/units/new_script.png" alt="The new file button" width="35"/> at the top left
+You may not have an Area A yet. To see it click the small green plus icon {%  
+    include image_tag.html url="/assets/img/units/new_script.png" 
+                           alt="The new file button." width="35px" %} at the top left
 of the window and choose **R Script**. You'll see a blank script document.  Whereas
 you run commands in the console one by one, you can collect these commands
 into a script and rerun them all any time you like. Type the following into your 
-script then click the **Source** button 
-<img src="/assets/img/units/source_button.png" alt="The source button" width="75"/>.
+script then click the **Source** button {% include image_tag.html
+        url="/assets/img/units/source_button.png" alt="The source button"
+        width="75px" %}
 
 > NOTE: You need to use the `print()` function to tell R to write the result to the 
 > console.
@@ -98,8 +100,9 @@ print(1 == 1)
 ```
 
 You can also run a script line by line. Click on any line to put the cursor then and 
-click the **Run** button 
-<img src="/assets/img/units/run_button.png" alt="The run button" width="52"/>. You will see only that result ouput.
+click the **Run** button {% include image_tag.html 
+        src="/assets/img/units/run_button.png" alt="The run button" width="52px" %}. 
+You will see only that result ouput.
 
 
 ### Environment and Memory

@@ -59,7 +59,8 @@ It doesn't matter too much if you know what it is. We are more interested in the
 discovering packages.
 
 <figure class="centered">
-  <img src="/assets/img/units/ternary_example.png" alt="An Example of a ternary plot" style="width:60%">
+  {% include image_tag.html url="/assets/img/units/ternary_example.png" 
+                            alt="An Example of a ternary plot" width="60%" %}
   <figcaption>Figure 1 - A ternary plot.</figcaption>
 </figure>
 
