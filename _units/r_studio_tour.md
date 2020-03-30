@@ -52,7 +52,7 @@ Each of these areas have a broad function, most of them with several tabs. We'll
 through each one quickly to get us started.
 
 <figure class="centered">
-  <img src="/assets/img/units/r_studio_environment.png" alt="The four main areas of the R Studio environment." style="width:75%">
+  <img src={{site.baseurl}}"/assets/img/units/r_studio_environment.png" alt="The four main areas of the R Studio environment." style="width:75%">
   <figcaption>Figure 1 - The four main areas of the R Studio environment.</figcaption>
 </figure>
 

@@ -8,3 +8,5 @@ supporting_files_path: "supporting_files/"
 # Where the bibliography data is comment out or set to blank to disable.
 title: Beginning R (DEV)
 
+baseurl: ""
+
